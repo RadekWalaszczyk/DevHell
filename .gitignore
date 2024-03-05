@@ -76,4 +76,5 @@ DerivedDataCache/*
 # Unreal temp files
 DevHell/Saved/*
 DevHell/Intermediate/*
+DevHell/Binaries/*
 
