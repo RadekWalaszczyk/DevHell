@@ -9,20 +9,12 @@ void UTimeController::OnWorldBeginPlay(UWorld& InWorld)
 	timeLeft = dayLenght;
 }
 
-void UTimeController::Tick(float DeltaTime)
+void UTimeController::UpdateDayLerp(float deltaTime, float& lerp)
 {
-	timeLeft -= DeltaTime;
+	timeLeft -= deltaTime;
 
 	dayLerp = UKismetMathLibrary::NormalizeToRange(timeLeft, 0.0f, dayLenght);
-}
 
-TStatId UTimeController::GetStatId() const
-{
-	return TStatId();
-}
-
-void UTimeController::UpdateDayLerp(float& lerp)
-{
 	if (dayLerp > 0)
 	{
 		lerp = 1 - dayLerp;

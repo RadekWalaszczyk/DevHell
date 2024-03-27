@@ -10,16 +10,11 @@
  * 
  */
 UCLASS(Abstract, Blueprintable, BlueprintType)
-class DEVHELL_API UTimeController : public UWorldSubsystem, public FTickableGameObject
+class DEVHELL_API UTimeController : public UWorldSubsystem
 {
 	GENERATED_BODY()
 	
 	virtual void OnWorldBeginPlay(UWorld& InWorld) override;
-
-	// Inherited via FTickableGameObject
-	void Tick(float DeltaTime) override;
-
-	TStatId GetStatId() const override;
 
 public:
 
@@ -35,7 +30,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	float sunsetAngle;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	float dayLenght;
 
 	float timeLeft;
@@ -46,5 +41,5 @@ public:
 
 public: 
 	UFUNCTION(BlueprintCallable)
-	void UpdateDayLerp(float& lerp);
+	void UpdateDayLerp(float deltaTime, float& lerp);
 };
