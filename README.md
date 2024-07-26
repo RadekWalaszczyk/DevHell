@@ -1,3 +1,3 @@
 ### Devhell - prototype
-Game is combination of Baba Is You and stanley parable
+Game is a combination of Baba Is You and The Stanley Parable
 
